@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top {
+    display: flex;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 1%;
+}
+
+fieldset {
+    border-radius: 10px 10px 0px 0px;
+    border : 0;  
+    margin-top: 1%;
+    width: 100%;
+    background-color: #ecf0f1;
+    height: 225px;
+    text-align: center;
+}
+
+.search_box {
+    display: flex;
+    margin-top: 12px;
+    text-align: center;
+    justify-content: center;
+}
+
+.search_box_line_1 {
+    width: 400px;
+    height: 150px;
+    border-style: solid; 
+    border-width: 0px 1px 0px 0px;
+    border-color: lightgray;
+}
+
+.searchDevice {
+    margin-top: 85px;
+    margin-left: 177px;
+}
+
+select {
+    margin-top: 85px;
+    width: 77px;
+    height: 25px;
+}
+
+.search_box_line_2 {
+    width: 400px;
+    height: 150px;
+}
+
+.searchDate {
+    margin-top: 85px;
+    margin-left: 20px;
+}
+
+.selectDate {
+    margin-top: 85px;
+}
+
+input#date1.selectDate {
+    text-align: center;
+}
+
+input#date2.selectDate {
+    text-align: center;
+}
+
+.searchButton {
+    width: 250px;
+    height: 30px;
+    background: #0064FF;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 19px;
+    margin-top: 16px;
+}
+
+.graph_btn_wrap {
+    width: 95%;
+    margin-left: 2.5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+a.chart_icon_temp {
+    width: 49.6%;
+    height: 40px;
+    background: #fff;
+    border-style:solid;
+    border-width: thin;
+    border-color: lightgray;
+    text-decoration: none;
+    color: black;
+}
+
+a.chart_icon_humi {
+    width: 49.6%;
+    height: 40px;
+    background: #fff;
+    border-style:solid;
+    border-width: thin;
+    border-color: lightgray;
+    text-decoration: none;
+    color: #000808;
+}
+
+.graph_btn_label {
+    margin-top: 10px;
+}
+
+.chart_temp { display: none; }
+.chart_humi { display: none; }
+.chart_switch { display: none; }
+
+.chart_temp.active { display: block; }
+.chart_humi.active { display: block; }
+.chart_switch.active { display: block; }
+
+.table_scrollbox {
+    margin-top: 3%;
+    overflow: scroll; 
+    width: auto; 
+    height: 600px;
+}
+
+.table_list {
+    width: 95%;
+    margin-left: 2.5%;
+    border-top: 1px solid #d3d9db;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border-bottom: 1px solid #d3d9db;
+    padding: 8px;
+    text-align: center;
+
+  }
+  
+  th:nth-child(2n), td:nth-child(2n) {
+    background-color: #fff;
+  }
+  
+  th:nth-child(2n+1), td:nth-child(2n+1) {
+    background-color: #ecf0f1;
+  }
+
+@media screen and (max-width: 720px) {
+    .search_box_line_1 {
+        width: 170px;
+        height: 150px;
+    }
+    
+    .searchDevice {
+        margin-top: 85px;
+        margin-left: 10px;
+    }
+
+    select {
+        margin-top: 85px;
+        width: 55px;
+    }
+    
+    .search_box_line_2 {
+        width: 170px;
+        height: 150px;
+    }
+    
+    .dateSelectWrap {
+        margin-top: 50px;
+    }
+    
+    input#date1.selectDate {
+        margin-top: 4px;
+        margin-left: 12px;
+        width: 150px;
+    }
+
+    input#date2.selectDate {
+        margin-top: 4px;
+        margin-left: 12px;
+        width: 150px;
+    }
+
+    a.chart_icon_temp {
+        width: 49%;
+    }
+    
+    a.chart_icon_humi {
+        width: 49%;
+    }
+
+    th, td {
+        padding: 2px;
+    }
+    .none { display: none; }
+}

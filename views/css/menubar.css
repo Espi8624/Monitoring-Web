@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+li {
+  list-style: none;
+}
+ol {
+  padding-left: 0px;
+}
+
+.head_menu {
+  border: 0;
+  display: flex;
+  background-color: #fff;
+}
+
+/*스마트팜 로고*/
+.menu_box {
+  background-color: #0064FF;
+  align-items: center;
+  width: 320px;
+  height: 75px;
+}
+h2.logo {
+  color: #fff;
+  margin-left: 5%;
+  margin-bottom: 0px;
+  margin-top: 12px;
+}
+h4.sublogo {
+  margin-left: 5%;
+  margin-top: 0px;
+  color: #ecf0f1;
+  font-size: 12px;
+}
+/*스마트팜 로고*/
+
+/*중간 메뉴 */
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+li.menu01 {
+  border-style: solid; 
+  border-width: 0px 1px 0px 0px;
+  border-color: lightgray;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+
+li.menu02 {
+  border-style: solid; 
+  border-width: 0px 1px 0px 0px;
+  border-color: lightgray;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+
+li.menu03 {
+  border-style: solid; 
+  border-width: 0px 1px 0px 0px;
+  border-color: lightgray;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+
+li.menu04 {
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+
+a.menu_on{
+  text-decoration: none;
+  color: black;
+  line-height: 20px;
+}
+
+a.menu_on:after {
+  display: block;
+  width: 140px;
+  content: '';
+  border-bottom: solid 2px #0064FF;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+a.menu_on:hover:after {
+  transform: scaleX(1);
+}
+
+a.log_out_link {
+  text-decoration: none;
+  padding: 19px;
+  color: black;
+}
+
+.menugroup {
+  display: flex;
+}
+.list_icon {
+  display: none;
+}
+
+/*중간 메뉴 */
+
+/*로그아웃*/
+.log-box {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1135px) {
+  header.head_menu {
+    flex-direction: column;
+  }
+  .menu_box {
+    display: flex;
+    width: 100%;
+    height: 70px;
+  }
+  .menugroup {
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  h2.logo {
+    margin-bottom: 15px;
+  }
+  h4.sublogo {
+    display: none;
+  }
+  .log_st {
+    display: none;
+  }
+  .list_icon {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    color: black;
+    text-decoration: none;
+  }
+  .menu {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+    flex-direction: column;
+    display: none;
+  }
+  a.menu_on {
+    padding: 5px;
+  }
+
+  .log-box {
+    margin-left: 0;
+  }
+  .menu01,
+  .menu02,
+  .menu03,
+  .menu04 {
+    margin-bottom: 5px;
+  }
+
+  a.menu_on:after {
+    width: 100%;
+  }
+  
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+  }
+}

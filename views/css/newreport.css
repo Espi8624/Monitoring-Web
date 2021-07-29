@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top {
+  display: flex;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 1%;
+}
+
+fieldset {
+  border-radius: 10px;
+  border : 0;  
+  margin-top: 1%;
+  width: 100%;
+  background-color: #ecf0f1;
+  height: 500px;
+}
+
+.btn_group {
+  float: right;
+  display: flex;
+  margin-top: 10px;
+}
+
+input.writeButton {
+  width: 92px;
+  height: 32px;
+  background: #fff;
+  border-radius: 4px;
+  border-style:solid;
+  border-width: thin;
+  border-color: lightgray;
+  text-decoration: none;
+}
+
+.cancel_btn {
+  text-align: center;
+  margin-left: 10px;
+  width: 90px;
+  height: 30px;
+  background: #fff;
+  border-radius: 4px;
+  border-style:solid;
+  border-width: thin;
+  border-color: lightgray;
+  font-size: 13px;
+}
+a.cancelButton { 
+  position: relative;
+  top: 6px;
+  color: #000808;
+  text-decoration: none; 
+}
+
+.writeContentWrap {
+  margin-top: 70px;
+  margin-left: 5%;
+}
+
+.writeTitleGroup {
+  margin-right: 10px;
+}
+
+.writeClassGroup-1 {
+  margin-bottom: 10px;
+}
+
+.writeGroup-1 {
+  height: 20px; 
+  width: 85%;
+}
+
+.writeClass-report {
+  display: flex;
+}
+
+.writeTitleGroup-report {
+  margin-right: 14px;
+}
+
+.reportContent {
+  width: 85%;
+  height: 300px; 
+}
+
+.writeDate {
+  margin-top: 15px;
+  margin-right: 9%;
+  float: right;
+}
+
+.writeGroup-date {
+  height: 20px; 
+  width: 150px;
+  text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+  fieldset {
+    border-radius: 10px;
+    border : 0;  
+    margin-top: 1%;
+    width: 100%;
+    background-color: #ecf0f1;
+    height: 450px;
+  }
+
+  input.writeGroup-1 {
+    width: 75%;
+  }
+
+  .reportContent {
+    width: 75%;
+    height: 250px; 
+  }
+}
