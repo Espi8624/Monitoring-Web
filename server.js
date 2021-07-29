@@ -8,12 +8,15 @@ const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const data = fs.readFileSync('./database.json');
+const dbInfo = JSON.parse(data);
+
 const mysqlConn = mysql.createConnection({ //데이터베이스 설정
-  host: '203.230.76.244',
-  port: 3310,
-  user: 'user1',
-  password: 'Dbtlavlf1!',
-  database: 'SmartFarm',
+  host: dbInfo.host,
+  port: dbInfo.port,
+  user: dbInfo.user,
+  password: dbInfo.password,
+  database: dbInfo.database,
   dateStrings: true,
   multipleStatements: true
 });
@@ -23,16 +26,19 @@ const server = http.createServer(app).listen(SERVERPORT, function () { //서버 
   console.log('Start Server...');
 });
 
-const accountSid = 'AC2f6ddc343f7ae8057f521a9cbd52c88d';
-const authToken = 'c4de05e5c9f2d8975bd2ec49206ee18d';
+const messageData = fs.readFileSync('./messageSendInfo.json');
+const messageInfo = JSON.parse(messageData);
+
+const accountSid = messageInfo.accountSid;
+const authToken = messageInfo.authToken;
 const client = require('twilio')(accountSid, authToken);
 
 function sendMessage() {
   client.messages
     .create({
-      body: '데이터가 안들어온지 1분 이상 지났습니다. http://203.230.76.244:3000/에서 확인해주세요.',
-      from: '+15074811098',
-      to: '+821036918624',
+      body: messageInfo.body,
+      from: messageInfo.from,
+      to: messageInfo.to,
     })
     .then(message => console.log(message.sid));
 }

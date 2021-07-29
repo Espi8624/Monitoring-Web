@@ -1,1 +1,20 @@
-node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# database
+/database.json
+
+# mesasgeInfo
+/messageSendInfo.json
+
+# dependencies
+/node_modules
+
+# git
+/.gitignore
+
+# docker
+/Dockerfile
+/.dockerignore
+
+# vscode
+/.vscode
