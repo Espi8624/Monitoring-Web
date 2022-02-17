@@ -1,6 +1,6 @@
-## SmartFarm System
+## Data Monitoring System
 
-본 프로젝트는 동명대학교 AI스마트팜 동아리 연구목적으로 제작된 프로젝트 입니다.
+This project is made for monitoring visualization over the web.
 
 
 ### `npm start`
