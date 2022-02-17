@@ -1,50 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SmartFarm - 카메라기록</title>
-        <link href="css/menubar.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    </head>
-    <body> 
-        <header class="head_menu">
-            <section class="menu_box">
-                <h2 class="logo">스마트팜</h2>
-                <h4 class="sublogo">스마트팜 관리시스템</h4>
-                <a href="#" class="list_icon"><i class="fas fa-list"></i></a>
-            </section>
-            <div class="menu">
-                <ol class="menugroup">
-                    <li class="menu01">
-                        <a href="/monitoring" class="menu_on"><span>농장상태 모니터링</span></a>
-                    </li>
-                    <li class="menu02">
-                        <a href="/dailyreport" class="menu_on"><span>농장 일지</span></a>
-                    </li>
-                    <li class="menu03">
-                        <a href="/sensor" class="menu_on"><span>센서기록 조회</span></a>
-                    </li>
-                    <li class="menu04">
-                        <a href="/camera" class="menu_on"><span>촬영기록 조회</span></a>
-                    </li>
-                </ol>
-                <span class="log-box">
-                    <span class="log_st">로그인 상태입니다.</span>
-                    <a class="log_out_link" href="/">로그아웃</a>
-                </span>
-            </div>
-        </header>
-<!--메뉴바 라인-->
-            <div id="body">
-                <div class="test">촬영 기록 조회 페이지</div>
-            </div>
-            <div id="tail">
 
-            </div>
-        </div>
-    </body>
-    <script src="js/menuBar.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href="css/appbar.css" rel="stylesheet" type="text/css" />
+    <title>SmartFarm - 카메라기록</title>
+</head>
+
+<body>
+    <app-bar></app-bar>
+    <!--메뉴바 라인-->
+    <div class="home_content">
+        <div class="test">촬영 기록 조회 페이지</div>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+<script src="components/appbar.js"></script>
+<script src="js/appbar.js"></script>
 
 </html>

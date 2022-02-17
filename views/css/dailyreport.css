@@ -113,7 +113,6 @@ a {
     text-decoration: none;
     color: #000808;
   }
-  a:hover { text-decoration: underline; }
 
   @media screen and (max-width: 720px) {
     fieldset {

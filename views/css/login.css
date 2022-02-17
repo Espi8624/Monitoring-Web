@@ -1,166 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+* {
+  margin: 0; padding: 0;
+}
+
 body {
-  margin: 0;
-  background-image: url("backgroundtrees.jpg");
-  font-family: 'Roboto', sans-serif;
-}
+  position: relative;
+  margin-top: 100px;
 
-.main {
-  display: table;
-  margin: auto;
-}
-
-.login-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  
+  background-color: #cbdbff;
 }
 
 .login-box {
-  margin-top: 20px;
+  margin: 0 auto;
+
   text-align: center;
-  width: 480px;
-  height: 300px;
-  background-color:white;
-  box-shadow: 10px 10px 20px #000808;
-  border-radius: 10px;
+  width: 400px;
+  height: 600px;
+
+  background: #ffffffa4;
+  border: 1px solid #ffffffa4;
+  border-radius: 8px;
 }
 
 .login-title {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  line-height: 220%;
-  border-bottom: 1px solid lightgray;
-  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 40%;
+  line-height: 240px;
+
+  font-size: 32px;
+  color: #6e6e6e;
 }
 
 .login-box-wrap {
-  margin-top: 51px;
+  width: 100%;
+  height: 50%;
 }
 
-.id-form {
-  margin-top: 20px;
+.login-input-wrap {
+  width: 100%;
+  height: 150px;
+}
+
+input.id-space {
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+
+  border: 2px solid #E2E2E2;
+  border-radius: 6px;
+}
+input.id-space:focus {
+  outline: none;
+}
+
+input.pw-space {
+  margin-top: 5px;
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+
+  border: 2px solid #E2E2E2;
+  border-radius: 6px;
+}
+input.pw-space:focus {
+  outline: none;
+}
+
+input.login-btn {
+  margin-top: 32px;
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+
+  color: #FFFFFF;
+  background-color: #3c3cf0;
+  border: 1px solid #3c3cf0;
+
+  font-size: 19px;
+}
+.signup-button {
+  margin-top: 27px;
+  font-size: 13px;
+
+  color: #6e6e6e;
+}
+
+.footer {
+  width: 100%;
+  height: 10%;
+
+  margin-top: 30px;
+  padding-top: 7px;
+
+  font-size: 11px;
+  color: #919191;
+
+  border-top: 1px solid #e2e2e2;
+}
+
+@media screen and (max-width: 768px) {
   
 }
 
-.id-space {
-  width: 270px; 
-  height: 25px; 
-  font-size: 15px;
-  background: #fdfeff;
-  border-color: #ecf0f1;
-  border-width: thin;
-  border-radius: 4px;
-  outline-color: #0064FF;
-}
-
-.pw-form {
-  margin-top: 12px;
-}
-
-.pw-space {
-  width: 270px; 
-  height: 25px; 
-  font-size: 15px;
-  background: #fdfeff;
-  border-color: #ecf0f1;
-  border-width: thin;
-  border-radius: 4px;
-  outline-color: #0064FF;
-}
-
-.btn {
-  margin-top: 22px;
-}
-
-.login-btn {
-  width: 250px;
-  height: 31px;
-  background: #0064FF;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 19px;
-}
-
-.login-underline {
-  margin-top: 15px;
-  font-size: 15px;
-  color: gray;
-  line-height: 37px;
-  border-bottom: 1px solid lightgray;
-  border-bottom-width: thin;
-}
-
-.login-utext {
-  margin-top: 5px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.445);
-}
-
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 375px) {
   body {
-    font-family: 'Roboto', sans-serif;
+    margin-top: 70px;
   }
-
+  
   .login-box {
     width: 350px;
-    height: 320px;
   }
+}
 
-  .login-box-wrap {
-    margin-top: 53px;
-  }
-
-  .id-space {
-    width: 250px; 
-    height: 25px; 
-    font-size: 15px;
-    background: #fdfeff;
-    border-color: #ecf0f1;
-    border-width: thin;
-    border-radius: 4px;
-    outline-color: #0064FF;
-  }
-
-  .pw-space {
-    width: 250px; 
-    height: 25px; 
-    font-size: 15px;
-    background: #fdfeff;
-    border-color: #ecf0f1;
-    border-width: thin;
-    border-radius: 4px;
-    outline-color: #0064FF;
-  }
-
-  .btn {
-    margin-top: 14px;
-  }
-
-  .login-btn {
-    width: 230px;
-    height: 31px;
-    background: #0064FF;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-size: 19px;
-  }
-
-  .login-underline {
-    font-size: 13px;
-    height: 18px;
-    line-height: 0px;
-    margin-top: 57px;
-  }
-
-  .login-utext {
-    margin-top: 5px;
-    font-size: 11px;
-    color: rgba(0, 0, 0, 0.445);
+@media screen and (max-width: 320px) {
+  .login-box {
+    width: 300px;
   }
 }
