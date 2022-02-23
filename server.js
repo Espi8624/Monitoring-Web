@@ -22,23 +22,24 @@ const mysqlConn = mysql.createConnection({ //데이터베이스 설정
   dateStrings: true,
   multipleStatements: true
 });
+mysqlConn.connect();
 
-const messageData = fs.readFileSync('./messageSendInfo.json');
-const messageInfo = JSON.parse(messageData);
+// const messageData = fs.readFileSync('./messageSendInfo.json');
+// const messageInfo = JSON.parse(messageData);
 
-const accountSid = messageInfo.accountSid;
-const authToken = messageInfo.authToken;
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = messageInfo.accountSid;
+// const authToken = messageInfo.authToken;
+// const client = require('twilio')(accountSid, authToken);
 
-function sendMessage() {
-  client.messages
-    .create({
-      body: messageInfo.body,
-      from: messageInfo.from,
-      to: messageInfo.to,
-    })
-    .then(message => console.log(message.sid));
-}
+// function sendMessage() {
+//   client.messages
+//     .create({
+//       body: messageInfo.body,
+//       from: messageInfo.from,
+//       to: messageInfo.to,
+//     })
+//     .then(message => console.log(message.sid));
+// }
 
 let send_socket_data = {
   clock_today: '',

@@ -4,9 +4,14 @@ const router = express.Router();
 
 module.exports = function (mysqlConn) {
     router.get('/', function (req, res) {
-        res.render('login.html')
+        fs.readFile('views/login.html', 'utf8', function (err, data) {
+            if (err) {
+                console.log('readFile Err');
+            } else {
+                res.send(data);
+            }
+        });
     });
 
     return router;
 }
-

@@ -1,10 +1,8 @@
-let btn = document.querySelector("#btn");
-let sidebar = document.querySelector("app-bar");
-let searchBtn = document.querySelector(".bx-search");
+window.onload = function () {
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector("app-bar");
 
-btn.onclick = function () {
-    sidebar.classList.toggle("active");
-}
-searchBtn.onclick = function () {
-    sidebar.classList.toggle("active");
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
 }

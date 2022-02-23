@@ -18,69 +18,59 @@
     <!--메뉴바 라인-->
     <!--nav 라인-->
     <div class="home_content">
-        <div class="main_field">
-            <div class="head_statusbox">
-                <h2 class="title">스마트팜 리스트</h2>
+        <div class="main_content">
+            <div class="header_line">
+                <h2 class="main_title">스마트팜 리스트</h2>
                 <div id="clock" class="clock">
                     <p>00:00:00</p>
                 </div>
             </div>
     
-            <div class="list_table">
-                <div class="table_box">
-                    <table class="table_list" summary="farm_status 테이블">
-                        <caption>
-                            <!--목록-->
-                        </caption>
-                        <colgroup>
-                            <col width="7%">
-                            <col width="13%">
-                            <col width="16%">
-                            <col width="16%">
-                            <col width="16%">
-                            <col width="24%">
-                            <col width />
-                        </colgroup>
-                        <thread>
-                            <tr>
-                                <th scope="col">번호</th>
-                                <th scope="col">농장이름</th>
-                                <th class="none" scope="col">농장국가</th>
-                                <th class="none" scope="col">농장지역</th>
-                                <th class="none" scope="col">관리자</th>
-                                <th class="none" scope="col">등록일자</th>
-                                <th scope="col">이동</th>
-                            </tr>
-                        </thread>
-                        <!--내용-->
-                        <% farmList.forEach(function(item, index){ %>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <%=item.farm_no %>
-                                    </td>
-                                    <td>
-                                        <%=item.farm_name %>
-                                    </td>
-                                    <td class="none">
-                                        <%=item.farm_country %>
-                                    </td>
-                                    <td class="none">
-                                        <%=item.farm_region %>
-                                    </td>
-                                    <td class="none">
-                                        <%=item.manager_id %>
-                                    </td>
-                                    <td class="none">
-                                        <%=item.ins_date %>
-                                    </td>
-                                    <td>
-                                        <a href="/monitoring/detail/<%=item.farm_no %>">▶</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <% }); %>
-                    </table>
+            <div id="middle_line" class="middle_line">
+                <div>
+                    <ul>
+                        <li>
+                            번호
+                        </li>
+                        <li>
+                            농장명
+                        </li>
+                        <li>
+                            위치지역
+                        </li>
+                        <li>
+                            관리자
+                        </li>
+                        <li>
+                            가동일자
+                        </li>
+                        <li>
+                            이동
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="display_list">
+                    <ul>
+                        <li>
+                            Null
+                        </li>
+                        <li>
+                            Null
+                        </li>
+                        <li>
+                            Null
+                        </li>
+                        <li>
+                            Null
+                        </li>
+                        <li>
+                            Null
+                        </li>
+                        <li>
+                            Null
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!--웹 워터마크 라인-->
@@ -91,7 +81,8 @@
     </div>
 </body>
 <script src="components/appbar.js"></script>
-<script src="js/appbar.js"></script>
+<script src="js/appbar.js" defer></script>
+<script src="js/monitoring_list.js"></script>
 <script src="js/viewClock.js"></script>
 
 </html>

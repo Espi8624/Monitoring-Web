@@ -16,106 +16,123 @@
 <body>
     <app-bar></app-bar>
     <!--메뉴바 라인-->
+
+    <div class="post_box">
+        <div class="post_box_body">
+            <label>작성</label>
+            <form action="/freeboard/write" method="POST">
+                <input type="text" name="post_title" class="post_title" placeholder="작물 이름" />
+                <textarea name="post_contents" class="post_contents" placeholder="내용"></textarea>
+                <input type="button" class="post_submit" value="작성하기" />
+            </form>
+        </div>
+    </div>
+
+    <div class="edit_box">
+        <div class="edit_box_body">
+            <label>수정</label>
+            <form action="/freeboard/write" method="POST">
+                <input type="text" name="edit_seq" class="edit_seq" placeholder="작물 번호" style="display:none"/>
+                <input type="text" name="edit_title" class="edit_title" placeholder="작물 이름" />
+                <textarea name="edit_contents" class="edit_contents" placeholder="내용"></textarea>
+                <input type="button" class="edit_submit" value="수정하기" />
+            </form>
+        </div>
+    </div>
+
     <div class="home_content">
-        <div id="container">
+        <div class="_blank"></div>
+        <div id="container" class="container">
             <div id="contents">
-                <!--탑 라인-->
-                <form method="post">
-                    <div class="top">
-                        <fieldset class="contentsWrap">
-                            <div class="write_btn">
-                                <a href="/dailyreport/newreport" class="write_btn_link">작성하기</a>
-                            </div>
-                            <div class="dailyWriteWrap">
-                                <div class="dailySearchDate">
-                                    <label class="writeDateTitle">작성일자 :</label>
-                                    <input type="date" name="date1" id="date1" class="selectDate" value="">
-                                    ~
-                                    <input type="date" name="date2" id="date2" class="selectDate" value="">
-                                </div>
-                                <div class="moreButtonWrap">
-                                    <a href="#" class="moreKeywordButton">+</a>
-                                </div>
-                                <div class="dailySearchKeyword">
-                                    <label class="selectKeywordTitle">키워드 검색 :</label>
-                                    <select name="selectKeyword" id="selectKeyword">
-                                        <option value="식물">식물</option>
-                                        <option value="내용">내용</option>
-                                    </select>
-                                    <input type="text" name="searchKeyword" id="searchKeyword" class="searchKeyword">
-                                </div>
-                                <script>
-                                    window.onload = function () {
-                                        chooseDateDisplay();
-                                    }
+                <div class="header_line">
+                    <h2 class="main_title">일지 작성</h2>
+                </div>
 
-                                    function chooseDateDisplay() {
-                                        var chooseDate = <% -JSON.stringify(dateWrap) %>;
-                                        var chooseDate = <% -JSON.stringify(dateWrap) %>;
+                <div class="middle_line">
+                    <form method="post">
+                        <div class="posting_button_wrap">
+                            <div class="posting_button">
+                                작성하기
+                            </div>
+                        </div>
 
-                                        document.getElementById("date1").value = chooseDate[0];
-                                        document.getElementById("date2").value = chooseDate[1];
-                                    }
-                                </script>
+                        <div class="posting_search_wrap">
+                            <div class="select_search_option">
+                                <div class="select_search_option_button">
+                                    <sub>작성일자 검색</sub>
+                                    <sub>키워드 검색</sub>
+                                </div>
                             </div>
-                            <div class="search_btn">
-                                <input type="submit" class="totalSearchButton" value="검색하기">
+                            <div class="posting_search_date" style="display: block;">
+                                <label class="writeDateTitle">작성일자 :</label>
+                                <input type="date" name="date1" id="date1" class="selectDate" value="">
+                                ~
+                                <input type="date" name="date2" id="date2" class="selectDate" value="">
                             </div>
-                        </fieldset>
-                    </div>
-                </form>
+                            <div class="posting_search_keyword" style="display: none;">
+                                <label class="selectKeywordTitle">키워드 검색 :</label>
+                                <select name="selectKeyword" id="selectKeyword">
+                                    <option value="식물">식물</option>
+                                    <option value="내용">내용</option>
+                                </select>
+                                <input type="text" name="searchKeyword" id="searchKeyword" class="searchKeyword">
+                            </div>
+                        </div>
+
+                        <div class="search_button">
+                            <div class="totalSearchButton">검색하기</div>
+                        </div>
+                    </form>
+                </div>
+
                 <!--리스트 라인-->
-                <div class="updateTarget">
-                    <div class="table_box">
-                        <table class="table table_list" summary="'번호, 식물, 내용, 작성일자' 으로 구성">
-                            <caption>
-                                <!--목록-->
-                            </caption>
-                            <colgroup>
-                                <col width="5%">
-                                <col width="15%">
-                                <col width="52%">
-                                <col width="14%">
-                                <col width="7%">
-                                <col width="7%">
-                            </colgroup>
-                            <thread>
-                                <tr>
-                                    <th class="none" scope="col">번호</th>
-                                    <th class="plant" scope="col">식물</th>
-                                    <th class="reportColumn" scope="col">내용</th>
-                                    <th class="writeDate" scope="col">작성일자</th>
-                                    <th scope="col">수정</th>
-                                    <th scope="col">삭제</th>
-                                </tr>
-                            </thread>
-                            <!--내용-->
-                            <tbody>
-                                <% prodList.forEach(function(item, index){ %>
-                                    <tr>
-                                        <td class="none">
-                                            <%=item.seq %>
-                                        </td>
-                                        <td class="plant">
-                                            <%=item.plant %>
-                                        </td>
-                                        <td class="reportColumn">
-                                            <%=item.report %>
-                                        </td>
-                                        <td class="writeDate">
-                                            <%=item.report_date %>
-                                        </td>
-                                        <td>
-                                            <a href="/dailyreport/edit/<%=item.seq %>">▶</a>
-                                        </td>
-                                        <td>
-                                            <a href="/dailyreport/delete/<%=item.seq %>">▶</a>
-                                        </td>
-                                    </tr>
-                                    <% }); %>
-                            </tbody>
-                        </table>
+                <div class="posting_content">
+                    <div class="column_title">
+                        <ul>
+                            <li>
+                                번호
+                            </li>
+                            <li>
+                                식물
+                            </li>
+                            <li>
+                                내용
+                            </li>
+                            <li>
+                                작성일자
+                            </li>
+                            <li>
+                                수정
+                            </li>
+                            <li>
+                                삭제
+                            </li>
+                        </ul>
                     </div>
+
+                    <div id="display_list">
+                        <ul>
+                            <li>
+                                Null
+                            </li>
+                            <li>
+                                Null
+                            </li>
+                            <li>
+                                Null
+                            </li>
+                            <li>
+                                Null
+                            </li>
+                            <li>
+                                Null
+                            </li>
+                            <li>
+                                Null
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -125,9 +142,12 @@
 
         </div>
     </div>
+
 </body>
 <script src="components/appbar.js"></script>
 <script src="js/appbar.js"></script>
-<script src="js/moreButton.js"></script>
+<script src="js/posting_window.js"></script>
+<script src="js/editing_window.js"></script>
+<script src="js/dailyreport.js"></script>
 
 </html>

@@ -9,13 +9,17 @@ module.exports = function (socket_data, mysqlConn) {
             if (err) {
                 console.log('readFile Err');
             } else {
-                mysqlConn.query('SELECT * FROM SmartFarm.farm_info', function (err, results) {
-                    if (err) {
-                        console.log('err: ', err.message);
-                    } else {
-                        res.send(ejs.render(data, { farmList: results }));
-                    }
-                });
+                res.send(data);
+            }
+        });
+    });
+
+    router.get('/get/list', function(req, res) {
+        mysqlConn.query('SELECT * FROM SmartFarm.farm_info', function (err, results) {
+            if (err) {
+                console.log('err: ', err.message);
+            } else {
+                res.json({ data: results });
             }
         });
     });
@@ -74,9 +78,9 @@ module.exports = function (socket_data, mysqlConn) {
             });
     }
 
-    setInterval(() => {
-        // statusUpdate();
-    }, 1000);
+    // setInterval(() => {
+    //     statusUpdate();
+    // }, 1000);
 
     function logReg() { // 데이터베이스 농장 상태 로그 저장 (measure_result)
         let temperature = socket_data.temperature;
@@ -105,9 +109,9 @@ module.exports = function (socket_data, mysqlConn) {
             });
     }
 
-    setInterval(() => {
-        logReg();
-    }, 60000);
+    // setInterval(() => {
+    //     logReg();
+    // }, 60000);
 
     return router;
 }
